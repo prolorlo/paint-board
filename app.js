@@ -133,3 +133,11 @@ if (saveBtn) {
 if (eraiser) {
     eraiser.addEventListener("click",handleEraise)
 }
+
+document.body.onkeydown = function(e){
+    if(e.keyCode == 107){
+        ctx.lineWidth = ctx.lineWidth+1
+    } else if(e.keyCode==109) {
+        ctx.lineWidth = ctx.lineWidth-1
+    }
+}
