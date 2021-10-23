@@ -4,6 +4,12 @@ const colors = document.getElementsByClassName("jsColor");
 const range = document.getElementById("jsRange");
 const mode = document.getElementById("jsMode");
 const saveBtn = document.getElementById("jsSave");
+const eraiser = document.getElementById("eraiser");
+const openModalBtn = document.getElementsByClassName("openModal");
+const modal = document.getElementsByClassName("modal");
+const overlay = document.getElementsByClassName("modal__overlay");
+const closeBtn = document.getElementsByClassName("closeBtn");
+const moreColors = document.getElementsByClassName("color");
 
 const INITIAL_COLOR = "2c2c2c";
 const CANVAS_SIZE = 700;
@@ -19,6 +25,7 @@ ctx.lineWidth = 2.5;
 
 let painting = false;
 let filling = false;
+let bgColor = "white";
 
 function stopPainting() {
     painting = false;
@@ -44,11 +51,11 @@ function handleColorClick(event) {
     const color = event.target.style.backgroundColor;
     ctx.strokeStyle = color;
     ctx.fillStyle = color;
+    ctx.lineWidth = range.value;
 }
 
 function handleRangeChange(event) {
     const size = event.target.value;
-    console.log(size)
     ctx.lineWidth = size;
 }
 
@@ -65,6 +72,7 @@ function handleModeClick() {
 function handleCanvasClick() {
     if (filling) {
         ctx.fillRect(0, 0, CANVAS_SIZE, CANVAS_SIZE);
+        bgColor = ctx.fillStyle;
     }
 }
 
@@ -78,6 +86,25 @@ function handleSaveClick() {
     link.href = image;
     link.download = "Image[🎨]";
     link.click();
+}
+
+function openModal() {
+    modal[0].classList.remove("hidden");
+}
+
+function closeModal() {
+    modal[0].classList.add("hidden");
+}
+
+openModalBtn[0].addEventListener("click", openModal);
+overlay[0].addEventListener("click", closeModal);
+closeBtn[0].addEventListener("click", closeModal)
+
+Array.from(moreColors).forEach(color => color.addEventListener("click", handleColorClick));
+
+function handleEraise() {
+    ctx.strokeStyle = bgColor;
+    ctx.lineWidth = 20;
 }
 
 if (canvas) {
@@ -101,4 +128,8 @@ if (mode) {
 
 if (saveBtn) {
     saveBtn.addEventListener("click",handleSaveClick)
+}
+
+if (eraiser) {
+    eraiser.addEventListener("click",handleEraise)
 }

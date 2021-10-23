@@ -11,7 +11,7 @@
     <canvas id="jsCanvas" class="canvas"></canvas>
     <div class="controls">
         <div class="controls__range">
-            <input type="range" id="jsRange" min="0.1" max="5.0" value="2.5" step="0.1">
+            <input type="range" id="jsRange" min="0.1" max="10.0" value="2.5" step="0.1">
         </div>
         <div class="controls__btns">
             <button id="jsMode">Fill</button>
@@ -27,6 +27,161 @@
             <div class="controls__color jsColor" style="background-color:#5AC8FA;"></div>
             <div class="controls__color jsColor" style="background-color:#0579FF;"></div>
             <div class="controls__color jsColor" style="background-color:#5856D6;"></div>
+            <div class="openModal">
+                +
+            </div>
+            <div class="modal hidden">
+                <div class="modal__overlay"></div>
+                <div class="modal__content">
+                    <div class="color_box">
+                        <div class="color" style="background-color: #FFA07A;"></div>
+                        <div class="color" style="background-color: #FA8072;"></div>
+                        <div class="color" style="background-color: #E9967A;"></div>
+                        <div class="color" style="background-color: #F08080;"></div>
+                        <div class="color" style="background-color: #CD5C5C;"></div>
+                        <div class="color" style="background-color: #DC143C;"></div>
+                        <div class="color" style="background-color: #B22222;"></div>
+                        <div class="color" style="background-color: #FF0000;"></div>
+                        <div class="color" style="background-color: #8B0000;"></div>
+                        <div class="color" style="background-color: #FF7F50;"></div>
+                        <div class="color" style="background-color: #FF6347;"></div>
+                        <div class="color" style="background-color: #FF4500;"></div>
+                        <div class="color" style="background-color: #FFD700;"></div>
+                        <div class="color" style="background-color: #FFA500;"></div>
+                        <div class="color" style="background-color: #FF8C00;"></div>
+                        <div class="color" style="background-color: #FFFFE0;"></div>
+                        <div class="color" style="background-color: #FFFACD;"></div>
+                        <div class="color" style="background-color: #FAFAD2;"></div>
+                        <div class="color" style="background-color: #FFEFD5;"></div>
+                        <div class="color" style="background-color: #FFE4B5;"></div>
+                        <div class="color" style="background-color: #FFDAB9;"></div>
+                        <div class="color" style="background-color: #EEE8AA;"></div>
+                        <div class="color" style="background-color: #F0E68C;"></div>
+                        <div class="color" style="background-color: #BDB76B;"></div>
+                        <div class="color" style="background-color: #FFFF00;"></div>
+                        <div class="color" style="background-color: #7CFC00;"></div>
+                        <div class="color" style="background-color: #7FFF00;"></div>
+                        <div class="color" style="background-color: #32CD32;"></div>
+                        <div class="color" style="background-color: #00FF00;"></div>
+                        <div class="color" style="background-color: #228B22;"></div>
+                        <div class="color" style="background-color: #008000;"></div>
+                        <div class="color" style="background-color: #006400;"></div>
+                        <div class="color" style="background-color: #ADFF2F;"></div>
+                        <div class="color" style="background-color: #9ACD32;"></div>
+                        <div class="color" style="background-color: #00FF7F;"></div>
+                        <div class="color" style="background-color: #00FA9A;"></div>
+                        <div class="color" style="background-color: #58FA58;"></div>
+                        <div class="color" style="background-color: #58FAAC;"></div>
+                        <div class="color" style="background-color: #82FA58;"></div>
+                        <div class="color" style="background-color: #40FF00;"></div>
+                        <div class="color" style="background-color: #58FA82;"></div>
+                        <div class="color" style="background-color: #81F781;"></div>
+                        <div class="color" style="background-color: #90EE90;"></div>
+                        <div class="color" style="background-color: #98FB98;"></div>
+                        <div class="color" style="background-color: #8FBC8F;"></div>
+                        <div class="color" style="background-color: #3CB371;"></div>
+                        <div class="color" style="background-color: #2E8B57;"></div>
+                        <div class="color" style="background-color: #808000;"></div>
+                        <div class="color" style="background-color: #556B2F;"></div>
+                        <div class="color" style="background-color: #6B8E23;"></div>
+                        <div class="color" style="background-color: #E0FFFF;"></div>
+                        <div class="color" style="background-color: #00FFFF;"></div>
+                        <div class="color" style="background-color: #7FFFD4;"></div>
+                        <div class="color" style="background-color: #66CDAA;"></div>
+                        <div class="color" style="background-color: #AFEEEE;"></div>
+                        <div class="color" style="background-color: #40E0D0;"></div>
+                        <div class="color" style="background-color: #48D1CC;"></div>
+                        <div class="color" style="background-color: #00CED1;"></div>
+                        <div class="color" style="background-color: #20B2AA;"></div>
+                        <div class="color" style="background-color: #5F9EA0;"></div>
+                        <div class="color" style="background-color: #008B8B;"></div>
+                        <div class="color" style="background-color: #008080;"></div>
+                        <div class="color" style="background-color: #B0E0E6;"></div>
+                        <div class="color" style="background-color: #ADD8E6;"></div>
+                        <div class="color" style="background-color: #87CEFA;"></div>
+                        <div class="color" style="background-color: #87CEEB;"></div>
+                        <div class="color" style="background-color: #00BFFF;"></div>
+                        <div class="color" style="background-color: #B0C4DE;"></div>
+                        <div class="color" style="background-color: #1E90FF;"></div>
+                        <div class="color" style="background-color: #6495ED;"></div>
+                        <div class="color" style="background-color: #4682B4;"></div>
+                        <div class="color" style="background-color: #4169E1;"></div>
+                        <div class="color" style="background-color: #0000FF;"></div>
+                        <div class="color" style="background-color: #0000CD;"></div>
+                        <div class="color" style="background-color: #00008B;"></div>
+                        <div class="color" style="background-color: #000080;"></div>
+                        <div class="color" style="background-color: #191970;"></div>
+                        <div class="color" style="background-color: #7B68EE;"></div>
+                        <div class="color" style="background-color: #6A5ACD;"></div>
+                        <div class="color" style="background-color: #483D8B;"></div>
+                        <div class="color" style="background-color: #E6E6FA;"></div>
+                        <div class="color" style="background-color: #D8BFD8;"></div>
+                        <div class="color" style="background-color: #DDA0DD;"></div>
+                        <div class="color" style="background-color: #EE82EE;"></div>
+                        <div class="color" style="background-color: #DA70D6;"></div>
+                        <div class="color" style="background-color: #FF00FF;"></div>
+                        <div class="color" style="background-color: #BA55D3;"></div>
+                        <div class="color" style="background-color: #9370DB;"></div>
+                        <div class="color" style="background-color: #8A2BE2;"></div>
+                        <div class="color" style="background-color: #9400D3;"></div>
+                        <div class="color" style="background-color: #9932CC;"></div>
+                        <div class="color" style="background-color: #8B008B;"></div>
+                        <div class="color" style="background-color: #800080;"></div>
+                        <div class="color" style="background-color: #4B0082;"></div>
+                        <div class="color" style="background-color: #FFC0CB;"></div>
+                        <div class="color" style="background-color: #FFB6C1;"></div>
+                        <div class="color" style="background-color: #FF69B4;"></div>
+                        <div class="color" style="background-color: #FF1493;"></div>
+                        <div class="color" style="background-color: #DB7093;"></div>
+                        <div class="color" style="background-color: #C71585;"></div>
+                        <div class="color" style="background-color: #FFFFFF;"></div>
+                        <div class="color" style="background-color: #FFFAFA;"></div>
+                        <div class="color" style="background-color: #F0FFF0;"></div>
+                        <div class="color" style="background-color: #F5FFFA;"></div>
+                        <div class="color" style="background-color: #F0FFFF;"></div>
+                        <div class="color" style="background-color: #F0F8FF;"></div>
+                        <div class="color" style="background-color: #F8F8FF;"></div>
+                        <div class="color" style="background-color: #F5F5F5;"></div>
+                        <div class="color" style="background-color: #FFF5EE;"></div>
+                        <div class="color" style="background-color: #F5F5DC;"></div>
+                        <div class="color" style="background-color: #FDF5E6;"></div>
+                        <div class="color" style="background-color: #FFFAF0;"></div>
+                        <div class="color" style="background-color: #FFFFF0;"></div>
+                        <div class="color" style="background-color: #FAEBD7;"></div>
+                        <div class="color" style="background-color: #FAF0E6;"></div>
+                        <div class="color" style="background-color: #FFF0F5;"></div>
+                        <div class="color" style="background-color: #FFE4E1;"></div>
+                        <div class="color" style="background-color: #DCDCDC;"></div>
+                        <div class="color" style="background-color: #D3D3D3;"></div>
+                        <div class="color" style="background-color: #C0C0C0;"></div>
+                        <div class="color" style="background-color: #A9A9A9;"></div>
+                        <div class="color" style="background-color: #808080;"></div>
+                        <div class="color" style="background-color: #696969;"></div>
+                        <div class="color" style="background-color: #778899;"></div>
+                        <div class="color" style="background-color: #708090;"></div>
+                        <div class="color" style="background-color: #2F4F4F;"></div>
+                        <div class="color" style="background-color: #000000;"></div>
+                        <div class="color" style="background-color: #FFF8DC;"></div>
+                        <div class="color" style="background-color: #FFEBCD;"></div>
+                        <div class="color" style="background-color: #FFE4C4;"></div>
+                        <div class="color" style="background-color: #FFDEAD;"></div>
+                        <div class="color" style="background-color: #F5DEB3;"></div>
+                        <div class="color" style="background-color: #DEB887;"></div>
+                        <div class="color" style="background-color: #D2B48C;"></div>
+                        <div class="color" style="background-color: #BC8F8F;"></div>
+                        <div class="color" style="background-color: #F4A460;"></div>
+                        <div class="color" style="background-color: #DAA520;"></div>
+                        <div class="color" style="background-color: #CD853F;"></div>
+                        <div class="color" style="background-color: #D2691E;"></div>
+                        <div class="color" style="background-color: #8B4513;"></div>
+                        <div class="color" style="background-color: #A0522D;"></div>
+                        <div class="color" style="background-color: #A52A2A;"></div>
+                        <div class="color" style="background-color: #800000;"></div>
+                    </div>
+                    <h1 class="closeBtn">✖</h1>
+                </div>
+            </div>
+            <img src="img/eraiser.png" id="eraiser">
         </div>
     </div>
     <script src="app.js"></script>
